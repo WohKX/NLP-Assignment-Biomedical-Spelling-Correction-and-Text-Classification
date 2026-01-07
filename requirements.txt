@@ -1,0 +1,70 @@
+# ============================================================
+# CORD-19 NLP Project (APU MSc AI) — Full Python Requirements
+# ============================================================
+# Tested target: Python 3.10+ (recommended 3.10 or 3.11)
+#
+# Notes
+# - This file lists ALL direct runtime dependencies used by:
+#   (1) Spelling correction system (non-word + real-word)
+#   (2) Text classification pipeline (training + deployment)
+#   (3) Streamlit web app GUI
+#   (4) Data preparation scripts + evaluation scripts
+#
+# Install (Windows / Linux / macOS):
+#   python -m pip install -r requirements.txt
+#
+# If you hit build issues on Windows, upgrade build tools first:
+#   python -m pip install -U pip setuptools wheel
+# ============================================================
+
+# ------------------------------
+# Core scientific stack
+# ------------------------------
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.11.4
+
+# scikit-learn is used for the classification models, pipelines, GridSearchCV, etc.
+scikit-learn==1.4.2
+joblib==1.4.2
+
+# ------------------------------
+# NLP stack (spellchecker + preprocessing)
+# ------------------------------
+spacy==3.7.5
+
+# spaCy English model used by preprocessing/tokenization
+# (Pinned via direct URL for reproducibility)
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
+
+# Optional but strongly recommended:
+# Provides general-English word frequency signals (helps outside-domain terms).
+wordfreq==3.1.1
+
+# Used in CORD-19 preparation to filter non-English abstracts
+langdetect==1.0.9
+
+# ------------------------------
+# Visualization (EDA + reporting)
+# ------------------------------
+matplotlib==3.8.4
+wordcloud==1.9.3
+# wordcloud depends on Pillow; pin explicitly for consistent installs
+Pillow==10.4.0
+
+# ------------------------------
+# Web GUI (Spellchecker + Classifier app)
+# ------------------------------
+streamlit==1.36.0
+
+# ------------------------------
+# Testing / QA (optional but included)
+# ------------------------------
+pytest==8.2.2
+
+# ------------------------------
+# (Optional) Developer formatting / linting
+# Not required to run the project, but helpful for maintainability.
+# ------------------------------
+black==24.8.0
+ruff==0.6.9

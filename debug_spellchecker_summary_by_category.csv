@@ -1,0 +1,7 @@
+category,n_total,n_error,n_negative,error_recall_pct,neg_fpr_pct
+covid-normalization,130,128,2,100.0,0.0
+domain-rule,6,6,0,100.0,
+general-english,104,104,0,100.0,
+negative,173,0,173,,0.0
+non-word,1021,1021,0,95.88638589618022,
+real-word,670,670,0,90.74626865671642,
